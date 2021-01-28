@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>关于如何建立博客步骤</title>
+    <link href="/2021/01/28/hello-world/"/>
+    <url>/2021/01/28/hello-world/</url>
+    
+    <content type="html"><![CDATA[<ol><li>安装全局的 hexo-cli 包</li><li>初始化 Blog 项目</li><li>创建 github 仓库</li><li>配置本地项目和 github 仓库相关联</li><li>选择一款皮肤</li><li>重新启动</li><li>修改主题配置</li></ol>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
