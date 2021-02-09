@@ -4,7 +4,7 @@
   
   
   <entry>
-    <title></title>
+    <title>webAPIs</title>
     <link href="/2021/02/09/webAPIs/"/>
     <url>/2021/02/09/webAPIs/</url>
     
@@ -17,7 +17,7 @@
   
   
   <entry>
-    <title></title>
+    <title>node</title>
     <link href="/2021/02/09/node/"/>
     <url>/2021/02/09/node/</url>
     
@@ -30,7 +30,7 @@
   
   
   <entry>
-    <title></title>
+    <title>js基础</title>
     <link href="/2021/02/09/js%E5%9F%BA%E7%A1%80/"/>
     <url>/2021/02/09/js%E5%9F%BA%E7%A1%80/</url>
     
@@ -43,7 +43,7 @@
   
   
   <entry>
-    <title></title>
+    <title>JQuery</title>
     <link href="/2021/02/09/JQuery/"/>
     <url>/2021/02/09/JQuery/</url>
     
@@ -56,11 +56,11 @@
   
   
   <entry>
-    <title></title>
+    <title>git命令</title>
     <link href="/2021/02/09/git%E5%91%BD%E4%BB%A4/"/>
     <url>/2021/02/09/git%E5%91%BD%E4%BB%A4/</url>
     
-    <content type="html"><![CDATA[<h3 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h3><p>添加全部未追踪文件    git add .</p><p>移除暂存区的对应文件  git reset HEAD file名 -</p><p>提交文件 git commit -m ‘修改内容’</p><p>查看文件状态 git status </p><p>配置git用户名和邮箱 git config –global user.name=”xxx”  git config –global user.email=”<a href="mailto:&#x78;&#x78;&#120;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;">&#x78;&#x78;&#120;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#109;</a>“</p><p>查看全局配置 git config –list –global</p><p>初始化git仓库 nvm init</p><p>把工作区中所有的修改还原到上一个最新版本中的状态 git checkout – [file]</p><p>跳过暂存区直接把文件提交到仓库 git commit -a -m ‘修改信息’</p><p>把暂存区和工作区的文件移除 git rm -r [file]</p><p>把暂存区的文件删除但保留工作区文件  git rm -r –cached[file]</p><p>查看历史记录 git log –oneline</p><p>切换版本 git reset –hard [commitID]</p><p>查看所有状态 git reflog –oneline</p><p>初始化git仓库命令 git init</p><p>关联github仓库 $ git remote add origin <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a>:qq919710247/my-project.git</p><p>将分支推入仓库 git push -u origin master （第一个之后直接git push即可） </p><p>克隆远程仓库 git clone [远程仓库的 git 地址]</p><p><u><em>提交步骤：1.git add  2.git commit -m ‘修改内容’  3.git push</em></u></p><h3 id="关联新的guthub"><a href="#关联新的guthub" class="headerlink" title="关联新的guthub"></a>关联新的guthub</h3><p>1.生成ssh密钥 ssh-keygen -t rsa -b 4096 -C 注册github时的邮箱(已生成)</p><p>2.复制公钥到github =&gt; Setting =&gt; SSH =&gt; And New SSH中</p><p>3.检查ssh是够配置成功 ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a></p><p>4.克隆远程仓库 git clone [远程仓库的 git 地址]（在code里面）</p><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>分支查询 git branch</p><p>新建分支 git branch dev-shop</p><p>切换分支 git checkout dev-shop</p><p>创建并跳转到某分支(基于master) git checkout -b dev-pay</p><p>再合并功能分支 git merge [功能分支]</p><p>查看远程分支信息 git remote show origin</p><p>删除本地分支  git branch -d dev-shop.html</p><p>删除远程分支 git push origin –delete 远程分支名</p><p>将本地分支推送到远程仓库 git push -u origin 本地分支名:远程分支名</p><p>查看远程仓库所有分支信息 git remote show origin</p><p>删除远程分支  git push origin –delete 远程分支名</p><h3 id="git忽略文件"><a href="#git忽略文件" class="headerlink" title="git忽略文件"></a>git忽略文件</h3><p>文件的规范-0</p><p>​      \1. 以 <code>#</code> 开头表示注释</p><p>​      \2. 以 <code>/</code> 结尾表示目录，忽略所有文件夹下的该文件</p><p>​      \3. 以 <code>/</code> 开头防止递归，忽略此文件夹下的该文件</p><p>​      \4. 以 <code>!</code> 开头表示取反</p><p>​      \5. 可以使用 glob 模式进行文件和文件夹的匹配</p><p>glob 模式包含的正则</p><p>​      (1) * 表示匹配零个或多个任意字符</p><p>​      (2) [abc] 表示匹配方括号中的任意一个字符</p><p>​      (3) ? 表示只匹配任意一个字符</p><p>​      (4) ** 表示匹配任意中间的目录, 比如 a/**/b 匹配 a/c/b 和 a/c/d/b</p><h3 id="git关联项目步骤"><a href="#git关联项目步骤" class="headerlink" title="git关联项目步骤"></a>git关联项目步骤</h3><p>1.配置用户名邮箱</p><p>2.ssh公钥链接</p><p>3.git clone</p><p>4.切换回到本地分支 </p><p>5.提交 add .   commit -m</p><p>6.pull(解决可能的冲突)</p><p>7.push</p><h3 id="git新建项目步骤"><a href="#git新建项目步骤" class="headerlink" title="git新建项目步骤"></a>git新建项目步骤</h3><p>1.git init</p><p>2.git add .</p><p>3.git commit -m ‘value’</p><p>4.git remote add origin [远程仓库地址]</p><p>5.git push -u oringin master</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h2><p>添加全部未追踪文件    git add .</p><p>移除暂存区的对应文件  git reset HEAD file名 -</p><p>提交文件 git commit -m ‘修改内容’</p><p>查看文件状态 git status </p><p>配置git用户名和邮箱 git config –global user.name=”xxx”  git config –global user.email=”<a href="mailto:&#x78;&#x78;&#x78;&#x40;&#x71;&#113;&#46;&#x63;&#111;&#x6d;">&#x78;&#x78;&#x78;&#x40;&#x71;&#113;&#46;&#x63;&#111;&#x6d;</a>“</p><p>查看全局配置 git config –list –global</p><p>初始化git仓库 nvm init</p><p>把工作区中所有的修改还原到上一个最新版本中的状态 git checkout – [file]</p><p>跳过暂存区直接把文件提交到仓库 git commit -a -m ‘修改信息’</p><p>把暂存区和工作区的文件移除 git rm -r [file]</p><p>把暂存区的文件删除但保留工作区文件  git rm -r –cached[file]</p><p>查看历史记录 git log –oneline</p><p>切换版本 git reset –hard [commitID]</p><p>查看所有状态 git reflog –oneline</p><p>初始化git仓库命令 git init</p><p>关联github仓库 $ git remote add origin <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#116;&#x40;&#103;&#x69;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#x6d;</a>:qq919710247/my-project.git</p><p>将分支推入仓库 git push -u origin master （第一个之后直接git push即可） </p><p>克隆远程仓库 git clone [远程仓库的 git 地址]</p><p><u><em>提交步骤：1.git add  2.git commit -m ‘修改内容’  3.git push</em></u></p><h3 id="关联新的guthub"><a href="#关联新的guthub" class="headerlink" title="关联新的guthub"></a>关联新的guthub</h3><p>1.生成ssh密钥 ssh-keygen -t rsa -b 4096 -C 注册github时的邮箱(已生成)</p><p>2.复制公钥到github =&gt; Setting =&gt; SSH =&gt; And New SSH中</p><p>3.检查ssh是够配置成功 ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;</a></p><p>4.克隆远程仓库 git clone [远程仓库的 git 地址]（在code里面）</p><h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><p>分支查询 git branch</p><p>新建分支 git branch dev-shop</p><p>切换分支 git checkout dev-shop</p><p>创建并跳转到某分支(基于master) git checkout -b dev-pay</p><p>再合并功能分支 git merge [功能分支]</p><p>查看远程分支信息 git remote show origin</p><p>删除本地分支  git branch -d dev-shop.html</p><p>删除远程分支 git push origin –delete 远程分支名</p><p>将本地分支推送到远程仓库 git push -u origin 本地分支名:远程分支名</p><p>查看远程仓库所有分支信息 git remote show origin</p><p>删除远程分支  git push origin –delete 远程分支名</p><h3 id="git忽略文件"><a href="#git忽略文件" class="headerlink" title="git忽略文件"></a>git忽略文件</h3><p>文件的规范-0</p><p>​      \1. 以 <code>#</code> 开头表示注释</p><p>​      \2. 以 <code>/</code> 结尾表示目录，忽略所有文件夹下的该文件</p><p>​      \3. 以 <code>/</code> 开头防止递归，忽略此文件夹下的该文件</p><p>​      \4. 以 <code>!</code> 开头表示取反</p><p>​      \5. 可以使用 glob 模式进行文件和文件夹的匹配</p><p>glob 模式包含的正则</p><p>​      (1) * 表示匹配零个或多个任意字符</p><p>​      (2) [abc] 表示匹配方括号中的任意一个字符</p><p>​      (3) ? 表示只匹配任意一个字符</p><p>​      (4) ** 表示匹配任意中间的目录, 比如 a/**/b 匹配 a/c/b 和 a/c/d/b</p><h3 id="git关联项目步骤"><a href="#git关联项目步骤" class="headerlink" title="git关联项目步骤"></a>git关联项目步骤</h3><p>1.配置用户名邮箱</p><p>2.ssh公钥链接</p><p>3.git clone</p><p>4.切换回到本地分支 </p><p>5.提交 add .   commit -m</p><p>6.pull(解决可能的冲突)</p><p>7.push</p><h3 id="git新建项目步骤"><a href="#git新建项目步骤" class="headerlink" title="git新建项目步骤"></a>git新建项目步骤</h3><p>1.git init</p><p>2.git add .</p><p>3.git commit -m ‘value’</p><p>4.git remote add origin [远程仓库地址]</p><p>5.git push -u oringin master</p>]]></content>
     
     
     
@@ -69,7 +69,7 @@
   
   
   <entry>
-    <title></title>
+    <title>Ajax</title>
     <link href="/2021/02/09/Ajax/"/>
     <url>/2021/02/09/Ajax/</url>
     
