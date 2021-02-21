@@ -172,8 +172,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-02-09 18:15" pubdate>
-        2021年2月9日 晚上
+      <time datetime="2021-02-21 21:08" pubdate>
+        2021年2月21日 晚上
       </time>
     </span>
   
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      201 字
+      930 字
     </span>
   
 
@@ -194,7 +194,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      10
        分钟
     </span>
   
@@ -254,11 +254,49 @@
 <h5 id="请求对象"><a href="#请求对象" class="headerlink" title="请求对象"></a>请求对象</h5><p>  一、requset 请求对象</p>
 <p>   提供了获取客户端相关的请求属性, 比如: </p>
 <p>   - req.url 请求的路径</p>
-<p>   - req.method 请求的方法</p>
+<p>   - req.method 请求的方式</p>
 <p>  二、response 响应对象</p>
 <p>   提供了服务器响应数据相关的方法, 比如：</p>
 <p>   - res.setHeader() 设置响应头</p>
 <p>   - res.end() 响应数据内容</p>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><h5 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h5><p>​    把一个大的功能事物拆分成若干个小的模块，再通过不同模块之间的组合，分解和转化来完成功能</p>
+<h5 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h5><p>​    1. 内置模块 （由 Node.js 官方提供的, 例如 fs, path, http 等）</p>
+<p>​    2. 自定义模块 （自己创建的 js 文件）</p>
+<p>​    3. 第三方模块 （由第三方开发的模块, 使用前需要先下载）</p>
+<h5 id="模块作用域"><a href="#模块作用域" class="headerlink" title="模块作用域"></a>模块作用域</h5><p>​    不同模块中定义的方法和变量，只能在当前模块内访问，这种模块级别的限制叫做模块作用域</p>
+<h5 id="module对象"><a href="#module对象" class="headerlink" title="module对象"></a>module对象</h5><p>​    1.尽量避免为exports对象重新赋值</p>
+<p>​    2.重新赋值一个对象用module.exports</p>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><h5 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h5><p>​    带有一个 package.json 文件的目录称为包, 用来描述多个模块之间互相依赖的关系, 通常第三方模块都是以一个包的形式存在, 又称为 “第三方包” </p>
+<h5 id="包的管理命令"><a href="#包的管理命令" class="headerlink" title="包的管理命令"></a>包的管理命令</h5><p>  一、下载一个指定的包 </p>
+<p>   <code>npm i 包的具体名称</code> </p>
+<p>  二、查看一个指定包</p>
+<p>   <code>npm view 包的具体名称</code></p>
+<p>  三、下载指定版本的包</p>
+<p>   <code>npm i 包的具体名称@版本号</code></p>
+<p>   四、快速创建包管理配置文件 </p>
+<p>   在项目的根目录下执行 <code>npm init -y</code> 命令</p>
+<p>   五、一次性安装所有包的命令</p>
+<p>   npm i</p>
+<p>   六、卸载指定的包 </p>
+<p>   执行 <code>npm uninstall 包名称</code></p>
+<p>  七、安装开发测试阶段用到的包</p>
+<p>   npm i -D 包名称@版本号</p>
+<p>  八、打开npmrc文件</p>
+<p>  code ~/.npmrc</p>
+<p>  九、使用nrm切换源</p>
+<p>  npm i -g nrm<code>==&gt;</code>nrm ls<code> ==&gt;</code>nrm use taobao</p>
+<p>  十、在包的发布目录下面执行命令</p>
+<p>   npm publish</p>
+<p>  十一、删除已经发布的包</p>
+<p>  npm unpublish 包名称 –force</p>
+<h3 id="模块加载机制"><a href="#模块加载机制" class="headerlink" title="模块加载机制"></a>模块加载机制</h3><h5 id="模块优先从缓存中进行加载"><a href="#模块优先从缓存中进行加载" class="headerlink" title="模块优先从缓存中进行加载"></a>模块优先从缓存中进行加载</h5><p>​    模块在第一次被加载后会被缓存，不论是内置核心模块、用户自定义模块还是第三方模块，都有对应的缓存策略以提高加载效率</p>
+<h5 id="1-内置模块的加载机制"><a href="#1-内置模块的加载机制" class="headerlink" title="1.内置模块的加载机制"></a>1.内置模块的加载机制</h5><p>​    require()总是会优先加载核心模块，即使有同名文件</p>
+<h5 id="2-自定义模块加载机制"><a href="#2-自定义模块加载机制" class="headerlink" title="2.自定义模块加载机制"></a>2.自定义模块加载机制</h5><ul>
+<li>必须以’/‘，’./‘或’../‘开头，否则会被默认为是核心模块</li>
+<li>如果按确切的文件名没有找到，则Node.js会尝试带上.js、.json或.node拓展名再加载</li>
+<li>目录加载顺序为：先寻找package.json文件，并寻找main属性作为require的入口；若上述找不到，Node.js会试图加载目录下index.js或index.node文件</li>
+</ul>
+<h5 id="3-第三方模块加载机制"><a href="#3-第三方模块加载机制" class="headerlink" title="3.第三方模块加载机制"></a>3.第三方模块加载机制</h5><p>   如果传递给 require() 的模块标识符不是一个核心模块，也没有以 ‘/‘ 、 ‘../‘ 或 ‘./‘ 开头， 那么 Node.js 会从当前模块的父目录开始，尝试从它的 /node_modules 目录里加载模块。如果还是没有找到， 则移动到再上一层父目录，直到文件系统的根目录</p>
 
             </div>
             <hr>
@@ -275,18 +313,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/02/09/webAPIs/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">webAPIs</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/02/09/js%E5%9F%BA%E7%A1%80/">
-                        <span class="hidden-mobile">js基础</span>
+                      <a href="/2021/02/09/webAPIs/">
+                        <span class="hidden-mobile">webAPIs</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
