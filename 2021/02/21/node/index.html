@@ -227,32 +227,40 @@
             <h1 style="display: none">node</h1>
             
             <div class="markdown-body">
-              <h1 id="node"><a href="#node" class="headerlink" title="node"></a>node</h1><h3 id="node内置模块"><a href="#node内置模块" class="headerlink" title="node内置模块"></a>node内置模块</h3><h5 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h5><p>1.读文件： fs.readFile()</p>
-<p>2.写文件： fs.writeFile()</p>
+              <h1 id="node"><a href="#node" class="headerlink" title="node"></a>node</h1><h3 id="node内置模块"><a href="#node内置模块" class="headerlink" title="node内置模块"></a>node内置模块</h3><h5 id="fs文件系统模块"><a href="#fs文件系统模块" class="headerlink" title="fs文件系统模块"></a>fs文件系统模块</h5><p>  1.读文件： fs.readFile()</p>
+<p>  2.写文件： fs.writeFile()</p>
 <h5 id="path路径模块"><a href="#path路径模块" class="headerlink" title="path路径模块"></a>path路径模块</h5><ol>
 <li>多个路径片段进行组合： path.join()</li>
 <li>获取路径中的文件名称： path.basename()</li>
 <li>获取文件拓展名：path.extname()</li>
-<li></li>
 </ol>
-<h5 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h5><h6 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h6><ol>
+<h5 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h5><ul>
+<li><p>创建服务器</p>
+<ol>
 <li><p>引入 http 模块 </p>
 </li>
 <li><p>创建服务实例</p>
 </li>
 <li><p>绑定事件, 监听请求</p>
 </li>
-<li><p>监听端口, 启动服务</p>
-</li>
 </ol>
-<h6 id="请求对象"><a href="#请求对象" class="headerlink" title="请求对象"></a>请求对象</h6><p>  一、requset 请求对象</p>
-<p>   提供了获取客户端相关的请求属性, 比如: </p>
-<p>   - req.url 请求的路径</p>
-<p>   - req.method 请求的方式</p>
-<p>  二、response 响应对象</p>
-<p>   提供了服务器响应数据相关的方法, 比如：</p>
-<p>   - res.setHeader() 设置响应头</p>
-<p>   - res.end() 响应数据内容</p>
+</li>
+</ul>
+<ol start="4">
+<li>监听端口, 启动服务</li>
+</ol>
+<ul>
+<li><p>请求对象</p>
+<p>一、requset 请求对象</p>
+<p> 提供了获取客户端相关的请求属性, 比如: </p>
+<p> - req.url 请求的路径</p>
+<p> - req.method 请求的方式</p>
+<p>二、response 响应对象</p>
+<p> 提供了服务器响应数据相关的方法, 比如：</p>
+<p> - res.setHeader() 设置响应头</p>
+<p> - res.end() 响应数据内容</p>
+</li>
+</ul>
 <h3 id="终端快捷键"><a href="#终端快捷键" class="headerlink" title="终端快捷键"></a>终端快捷键</h3><p>1.↑切换到上一行</p>
 <p>2.tab快速补全</p>
 <p>3.ctrl+u快速清空内容</p>
@@ -297,7 +305,7 @@
 <h5 id="3-第三方模块加载机制"><a href="#3-第三方模块加载机制" class="headerlink" title="3.第三方模块加载机制"></a>3.第三方模块加载机制</h5><p>   如果传递给 require() 的模块标识符不是一个核心模块，也没有以 ‘/‘ 、 ‘../‘ 或 ‘./‘ 开头， 那么 Node.js 会从当前模块的父目录开始，尝试从它的 /node_modules 目录里加载模块。如果还是没有找到， 则移动到再上一层父目录，直到文件系统的根目录</p>
 <h3 id="express"><a href="#express" class="headerlink" title="express"></a>express</h3><h5 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h5><p>express本质是一个npm的第三方包</p>
 <h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><ul>
-<li>npm i <a href="mailto:&#x65;&#120;&#112;&#x72;&#x65;&#115;&#x73;&#x40;&#x34;&#46;&#x31;&#55;&#46;&#x31;">&#x65;&#120;&#112;&#x72;&#x65;&#115;&#x73;&#x40;&#x34;&#46;&#x31;&#55;&#46;&#x31;</a></li>
+<li>npm i <a href="mailto:&#x65;&#x78;&#112;&#x72;&#101;&#x73;&#x73;&#x40;&#52;&#46;&#49;&#55;&#46;&#x31;">&#x65;&#x78;&#112;&#x72;&#101;&#x73;&#x73;&#x40;&#52;&#46;&#49;&#55;&#46;&#x31;</a></li>
 <li>全局动态监测文件变化的插件nodemon:npm i -g nodemon</li>
 </ul>
 <h5 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h5><ul>
