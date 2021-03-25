@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.new.png">
+  <link rel="icon" type="image/png" href="/img/favicon.new.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="小菜鸟">
+  <meta name="author" content="tyf">
+  <meta name="keywords" content="">
+  <title>Vue - tianyf</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"qq919710247.github.io","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>tyf的博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Vue">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-25 20:14" pubdate>
+        2021年3月25日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      39
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Vue</h1>
+            
+            <div class="markdown-body">
+              <h2 id="1、前导"><a href="#1、前导" class="headerlink" title="1、前导"></a>1、前导</h2><h3 id="1-1、vue-config-js-文件"><a href="#1-1、vue-config-js-文件" class="headerlink" title="1.1、vue.config.js 文件"></a>1.1、<code>vue.config.js</code> 文件</h3><p><code>vue.config.js</code>文件是<code>vue-cli</code>脚手架的配置文件，这个文件是在项目的根目录。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// vue.config.js</span><br><span class="hljs-comment">// node.js 的模块</span><br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-comment">// 部署应用包时的基本 URL</span><br>  publicPath: process.env.NODE_ENV === <span class="hljs-string">&#x27;production&#x27;</span> ? <span class="hljs-string">&#x27;./&#x27;</span> : <span class="hljs-string">&#x27;/&#x27;</span>,<br>  <span class="hljs-comment">// 生产环境构建文件的目录 ，打包后的文件夹名 默认就是dist</span><br>  outputDir: <span class="hljs-string">&#x27;dist&#x27;</span>,<br>  <span class="hljs-comment">// 静态文件资源存放目录,默认是 空</span><br>  assetsDir: <span class="hljs-string">&#x27;static&#x27;</span>,<br>  <span class="hljs-comment">// 打包后的html文件名称，默认是 index.html</span><br>  indexPath: <span class="hljs-string">&#x27;index.html&#x27;</span>,<br>  <span class="hljs-comment">// 项目服务的一些配置</span><br>  devServer: &#123;<br>    host: <span class="hljs-string">&#x27;127.0.0.1&#x27;</span>, <span class="hljs-comment">// 主机地址</span><br>    port: <span class="hljs-number">5555</span>, <span class="hljs-comment">// 端口号</span><br>    open: <span class="hljs-literal">true</span> <span class="hljs-comment">// 自动打开浏览器运行项目</span><br>    <span class="hljs-comment">// proxy: &#123;  // 如果写了就一定要定义内部的 内容</span><br>    <span class="hljs-comment">//   // 跨域代理配置</span><br>    <span class="hljs-comment">// &#125;</span><br>  &#125;,<br>  <span class="hljs-comment">// configureWebpack  和 chainWebpack 是对webpack的内部配置进行细致的修改！</span><br>  configureWebpack: &#123;<br>    plugins: [], <span class="hljs-comment">// webpack的插件</span><br>    <span class="hljs-built_in">module</span>: &#123;&#125; <span class="hljs-comment">// 配置自己的loader</span><br>  &#125;,<br>  <span class="hljs-comment">// configureWebpack: config =&gt; &#123;&#125;,  // 函数式写法</span><br>  chainWebpack: <span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> &#123;<br>    <span class="hljs-comment">// console.log(config.mode) // 模式</span><br>    <span class="hljs-comment">// console.log(config.entry) // 入口</span><br>    <span class="hljs-comment">// console.log(config.output) // 出口</span><br>    <span class="hljs-comment">// console.log(config.plugins) // 插件</span><br>    <span class="hljs-comment">// console.log(config.module) // Loader加载器</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<h3 id="1-2、环境变量"><a href="#1-2、环境变量" class="headerlink" title="1.2、环境变量"></a>1.2、环境变量</h3><ul>
+<li><p><code>process</code> 是node.js的进程，这里包含了很多的运行环境的信息。</p>
+</li>
+<li><p><code>process.env</code> 这是叫做进程里面的环境变量，<code>vue-cli</code>脚手架默认注入了两个环境变量信息</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js">&#123;<br>		BASE_URL: <span class="hljs-string">&quot;/&quot;</span>   <span class="hljs-comment">// 项目基准地址    默认是  /    如果要修改，就去vue.config.js 中改publicPath</span><br>		NODE_ENV: <span class="hljs-string">&quot;development&quot;</span>   <span class="hljs-comment">// 开发环境，不允许修改， 两个值   development 开发   production 生产</span><br>&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p><strong>自定义一些环境变量</strong></p>
+<p>项目根目录创建  <code>.env</code> 文件 ，<code>.env.production</code> 或者 <code>.env.development</code> 三个文件。</p>
+<ul>
+<li><p><code>.env</code> 文件表示任何环境下都可以读取到的环境变量</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vala"><span class="hljs-meta"># 任何环境下都可以读取到的环境变量</span><br><span class="hljs-meta"># 格式： 键=值</span><br><span class="hljs-meta"># 自定义的环境变量需要以 VUE_APP_ 作为开头</span><br><br>VUE_APP_ROOT_MSG = 这是任何环境下都可以读取到的！<br></code></pre></td></tr></table></figure></li>
+<li><p><code>.env.development</code> 表示开发环境下可以读取到的环境变量信息</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># 只有在开发环境下才可以读取到的环境变量</span><br><br>VUE_APP_MSG_DEV = 这是开发环境下的msg。。。<br>VUE_APP_API_URL = http:<span class="hljs-regexp">//</span><span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">8888</span><span class="hljs-regexp">/api/</span>private<span class="hljs-regexp">/v1/</span><br></code></pre></td></tr></table></figure></li>
+<li><p><code>.env.production</code> 表示生产环境可以读取的环境变量信息</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-comment"># 只有在生产环境下才可以读取到的环境变量</span><br><br>VUE_APP_MSG_PROD = 这是生产环境下的msg！！！！<br>VUE_APP_API_URL = http:<span class="hljs-regexp">//</span><span class="hljs-number">122.51</span>.<span class="hljs-number">249.55</span>:<span class="hljs-number">5000</span><span class="hljs-regexp">/api/</span>private<span class="hljs-regexp">/v1/</span><br></code></pre></td></tr></table></figure></li>
+<li><p>通过 <code>process.env.名称</code>来读取环境变量信息，在不同的环境下读取不同的内容</p>
+</li>
+<li><p><strong>注意 <code>.gitignore</code>文件里面是否忽略提交 上述这些文件</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2、项目打包"><a href="#2、项目打包" class="headerlink" title="2、项目打包"></a>2、项目打包</h2><ul>
+<li>项目执行打包指令 <code>npm run build </code> ，执行结束之后 出现<code>dist</code>目录，我们讲给<code>dist</code>目录交给后台去部署到静态目录即可</li>
+</ul>
+<h2 id="3、打包注意事项"><a href="#3、打包注意事项" class="headerlink" title="3、打包注意事项"></a>3、打包注意事项</h2><h3 id="3-1、修改相对路径【重要】"><a href="#3-1、修改相对路径【重要】" class="headerlink" title="3.1、修改相对路径【重要】"></a>3.1、修改相对路径【重要】</h3><ul>
+<li><p>默认情况下打包出来的<code>dist</code>目录里面的<code>index.html</code>文件是不能直接打开的，因为里面的静态文件引用都是绝对路径，无法获取到资源。需要部署到服务器环境下面才可以访问到。</p>
+</li>
+<li><p>如果我们希望得到在打包之后直接能点击<code>index.html</code>就可以预览，需要将生产环境下路径引用关系改为相对路径。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> vue.config.js<br><br>module.exports = &#123;<br>	publicPath:process.env.NODE_ENV === <span class="hljs-string">&#x27;production&#x27;</span> ? <span class="hljs-string">&#x27;./&#x27;</span>:<span class="hljs-string">&#x27;/&#x27;</span>  <span class="hljs-regexp">//</span> 生产环境下改为./即可<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>然后再次执行<code>npm run build</code> 即可出现<code>dist</code>目录。</p>
+</li>
+</ul>
+<h3 id="3-2、打包体积优化"><a href="#3-2、打包体积优化" class="headerlink" title="3.2、打包体积优化"></a>3.2、打包体积优化</h3><p>项目体积优化是非常重要的一件事件，但是要做好这件事首先需要了解项目目前体积下的资源占用情况。我们有两种方式可以了解打包资源占用情况。一是通过<code>vue ui</code>界面化工具，二是通过<code>webpack-bundle-analyzer</code>插件去生成分析报告。下面我们将逐一讲解如果看打包体积</p>
+<ul>
+<li><p><strong>获取项目打包体积分析</strong></p>
+<ul>
+<li>方式1：<code>vue ui</code> 工具</li>
+</ul>
+<p><img src="./imgs/img1.jpg" srcset="/img/loading.gif"></p>
+<ul>
+<li>方式2：<code>webpack</code> 插件分析,在<code>vue.config.js</code>中配置输出</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 导入webpack插件，不需要安装，vue-cli里面已经集成好了</span><br><span class="hljs-keyword">const</span> &#123; BundleAnalyzerPlugin &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;webpack-bundle-analyzer&#x27;</span>)  <br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  ... <span class="hljs-comment">// 其他配置</span><br>  configureWebpack: &#123;<br>    plugins: [<span class="hljs-keyword">new</span> BundleAnalyzerPlugin()]<br>  &#125;<br>  ... <span class="hljs-comment">// 其他配置  </span><br>&#125;<br><br></code></pre></td></tr></table></figure>
+<p>配置好以后，我们打包的时候执行 <strong><code>npm run build --report</code></strong></p>
+<ul>
+<li><strong>注意以上两 需配置。</strong></li>
+</ul>
+</li>
+<li><p><strong>项目优化方式</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>像这种情况，我们怎么优化一下呢</p>
+</blockquote>
+<h4 id="webpack排除打包"><a href="#webpack排除打包" class="headerlink" title="webpack排除打包"></a>webpack排除打包</h4><p>CDN是一个比较好的方式</p>
+<blockquote>
+<p>文件不是大吗？我们就不要把这些大的文件和那些小的文件打包到一起了，，我们可以放到CDN服务器上，一来，减轻整体包的大小，二来CDN的加速服务可以加快我们对于插件的访问速度</p>
+</blockquote>
+<p><strong>使用方式</strong></p>
+<p>先找到 <code>vue.config.js</code>， 添加 <code>externals</code> 让 <code>webpack</code> 不打包 <code>xlsx</code> 和 <code>element</code>   </p>
+<p><strong><code>vue.config.js</code></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js">publicPath: isPord ? <span class="hljs-string">&#x27;./&#x27;</span> : <span class="hljs-string">&#x27;/&#x27;</span>,<br>  configureWebpack: &#123;<br>    plugins: [<span class="hljs-keyword">new</span> BundleAnalyzerPlugin()],<br>    externals: externals<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>再次运行，我们会发现包的大小已经大幅减小</p>
+<h4 id="CDN文件配置"><a href="#CDN文件配置" class="headerlink" title="CDN文件配置"></a>CDN文件配置</h4><blockquote>
+<p>但是，没有被打包的几个模块怎么处理？</p>
+</blockquote>
+<p>可以采用CDN的方式，在页面模板中预先引入</p>
+<p><strong><code>vue.config.js</code></strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> cdn = &#123;<br>   css: [<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css&#x27;</span><br>    ],<br>    js: [<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/element-ui/2.8.2/index.js&#x27;</span><br>    ] <br>&#125;<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>但是请注意，这时的配置实际上是对开发环境和生产环境都生效的，在开发环境时，没有必要使用CDN，此时我们可以使用环境变量来进行区分</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 通过环境变量 来区分是否使用cdn</span><br><span class="hljs-keyword">const</span> isProd = process.env.NODE_ENV === <span class="hljs-string">&#x27;production&#x27;</span> <span class="hljs-comment">// 判断是否是生产环境</span><br><span class="hljs-keyword">let</span> cdn = &#123; <span class="hljs-attr">css</span>: [], <span class="hljs-attr">js</span>: [] &#125;<br><span class="hljs-keyword">let</span> externals = &#123;&#125;<br><span class="hljs-keyword">if</span> (isProd) &#123;<br>  <span class="hljs-comment">// 如果是生产环境 就排除打包 否则不排除</span><br>  externals = &#123;<br>    vue: <span class="hljs-string">&#x27;Vue&#x27;</span>,<br>    <span class="hljs-string">&#x27;element-ui&#x27;</span>: <span class="hljs-string">&#x27;ELEMENT&#x27;</span>,<br>    <span class="hljs-string">&#x27;vue-router&#x27;</span>: <span class="hljs-string">&#x27;VueRouter&#x27;</span>,<br>    axios: <span class="hljs-string">&#x27;axios&#x27;</span>,<br>    lodash: <span class="hljs-string">&#x27;_&#x27;</span>,<br>    echarts: <span class="hljs-string">&#x27;echarts&#x27;</span>,<br>    nprogress: <span class="hljs-string">&#x27;NProgress&#x27;</span>,<br>    <span class="hljs-string">&#x27;vue-quill-editor&#x27;</span>: <span class="hljs-string">&#x27;VueQuillEditor&#x27;</span><br>  &#125;<br>  cdn = &#123;<br>    css: [<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css&#x27;</span><br>    ],<br>    js: [<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/element-ui/2.8.2/index.js&#x27;</span><br>    ] <br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="注入CDN文件到模板"><a href="#注入CDN文件到模板" class="headerlink" title="注入CDN文件到模板"></a>注入CDN文件到模板</h4><p>之后通过 <code>html-webpack-plugin</code>注入到 <code>index.html</code>之中:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><br>chainWebpack: <span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> &#123;<br>    <span class="hljs-comment">// 配置 webpack-plugin-html 插件中的内容。 args[0] 表示配置信息，增加cdn变量</span><br>    config.plugin(<span class="hljs-string">&#x27;html&#x27;</span>).tap(<span class="hljs-function"><span class="hljs-params">args</span> =&gt;</span> &#123;<br>      args[<span class="hljs-number">0</span>].cdn = cdn<br>      <span class="hljs-keyword">return</span> args <span class="hljs-comment">// 需要return</span><br>    &#125;)<br>  &#125;<br></code></pre></td></tr></table></figure>
+<p>找到 <code>public/index.html</code>。通过你配置的<code>CDN Config</code> 依次注入 css 和 js。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;head&gt;<br>  &lt;!-- 引入样式 --&gt;<br>  &lt;% for(var css of htmlWebpackPlugin.options.cdn.css) &#123; %&gt;<br>    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;&lt;%&#x3D;css%&gt;&quot;&gt;<br>  &lt;% &#125; %&gt;<br>&lt;&#x2F;head&gt;<br><br>&lt;!-- 引入JS --&gt;<br>&lt;% for(var js of htmlWebpackPlugin.options.cdn.js) &#123; %&gt;<br>  &lt;script src&#x3D;&quot;&lt;%&#x3D;js%&gt;&quot;&gt;&lt;&#x2F;script&gt;<br>&lt;% &#125; %&gt;<br></code></pre></td></tr></table></figure>
+<p>最后，进行打包 。</p>
+<ul>
+<li><p>完成配置如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 导入webpack插件，不需要安装，vue-cli里面已经集成好了</span><br><span class="hljs-keyword">const</span> &#123; BundleAnalyzerPlugin &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;webpack-bundle-analyzer&#x27;</span>)<br><br><span class="hljs-comment">// 判断是否为生产环境</span><br><span class="hljs-keyword">const</span> isProd = process.env.NODE_ENV === <span class="hljs-string">&#x27;production&#x27;</span><br><span class="hljs-keyword">let</span> plugins = []<br><span class="hljs-keyword">let</span> cdn = &#123; <span class="hljs-attr">css</span>: [], <span class="hljs-attr">js</span>: [] &#125; <span class="hljs-comment">// cdn资源</span><br><span class="hljs-keyword">let</span> externals = &#123;&#125; <span class="hljs-comment">// 排除项</span><br><span class="hljs-keyword">if</span> (isProd) &#123;<br>  plugins = [<br>    <span class="hljs-keyword">new</span> BundleAnalyzerPlugin(&#123;<br>      analyzerPort: <span class="hljs-number">9999</span> <span class="hljs-comment">// 项目体积分析报告运行所在端口地址</span><br>    &#125;)<br>  ]<br>  cdn = &#123;<br>    css: [<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.core.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.snow.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.bubble.min.css&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css&#x27;</span><br>    ],<br>    js: [<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/vue/2.5.22/vue.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/axios/0.18.0/axios.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/lodash.js/4.17.11/lodash.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/echarts/4.1.0/echarts.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/quill/1.3.4/quill.min.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.jsdelivr.net/npm/vue-quill-editor@3.0.4/dist/vue-quill-editor.js&#x27;</span>,<br>      <span class="hljs-string">&#x27;https://cdn.staticfile.org/element-ui/2.8.2/index.js&#x27;</span><br>    ]<br>  &#125;<br>  externals = &#123;<br>    <span class="hljs-comment">// 键 是 包名</span><br>    <span class="hljs-comment">// 值 是 全局引入的cdn资源暴露在window中变量名称，这个一定要注意，确保正确，否则会因为找不到而使得项目无法打包</span><br>    vue: <span class="hljs-string">&#x27;Vue&#x27;</span>,<br>    <span class="hljs-string">&#x27;element-ui&#x27;</span>: <span class="hljs-string">&#x27;ELEMENT&#x27;</span>,<br>    <span class="hljs-string">&#x27;vue-router&#x27;</span>: <span class="hljs-string">&#x27;VueRouter&#x27;</span>,<br>    axios: <span class="hljs-string">&#x27;axios&#x27;</span>,<br>    lodash: <span class="hljs-string">&#x27;_&#x27;</span>,<br>    echarts: <span class="hljs-string">&#x27;echarts&#x27;</span>,<br>    nprogress: <span class="hljs-string">&#x27;NProgress&#x27;</span>,<br>    <span class="hljs-string">&#x27;vue-quill-editor&#x27;</span>: <span class="hljs-string">&#x27;VueQuillEditor&#x27;</span><br>  &#125;<br>&#125;<br><br><span class="hljs-built_in">module</span>.exports = &#123;<br>  <span class="hljs-comment">// 部署应用包时的基本 URL</span><br>  publicPath: isProd ? <span class="hljs-string">&#x27;./&#x27;</span> : <span class="hljs-string">&#x27;/&#x27;</span>,<br>  <span class="hljs-comment">// 生产环境构建文件的目录 ，打包后的文件夹名 默认就是dist</span><br>  outputDir: <span class="hljs-string">&#x27;dist&#x27;</span>,<br>  <span class="hljs-comment">// 静态文件资源存放目录,默认是 空</span><br>  assetsDir: <span class="hljs-string">&#x27;static&#x27;</span>,<br>  <span class="hljs-comment">// 打包后的html文件名称，默认是 index.html</span><br>  indexPath: <span class="hljs-string">&#x27;index.html&#x27;</span>,<br>  <span class="hljs-comment">// 项目服务的一些配置</span><br>devServer: &#123;<br>    host: <span class="hljs-string">&#x27;127.0.0.1&#x27;</span>, <span class="hljs-comment">// 主机地址</span><br>  port: <span class="hljs-number">5555</span> <span class="hljs-comment">// 端口号</span><br>    <span class="hljs-comment">// open: true // 自动打开浏览器运行项目</span><br>    <span class="hljs-comment">// proxy: &#123;  // 如果写了就一定要定义内部的 内容</span><br>    <span class="hljs-comment">//   // 跨域代理配置</span><br>    <span class="hljs-comment">// &#125;</span><br>  &#125;,<br>  <span class="hljs-comment">// configureWebpack  和 chainWebpack 是对webpack的内部配置进行细致的修改！</span><br>  configureWebpack: &#123;<br>    <span class="hljs-comment">// webpack的插件</span><br>    plugins: plugins,<br>    <span class="hljs-comment">// webpack的loader</span><br>    <span class="hljs-built_in">module</span>: &#123;&#125;,<br>    <span class="hljs-comment">// webpack 开发/生产  环境下的排除 编译排除项</span><br>    externals: externals<br>  &#125;,<br>  <span class="hljs-comment">// configureWebpack: config =&gt; &#123;&#125;,  // 函数式写法</span><br>  chainWebpack: <span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> &#123;<br>    <span class="hljs-comment">// 配置 webpack-plugin-html 插件中的内容。 args[0] 表示配置信息，增加cdn变量</span><br>    config.plugin(<span class="hljs-string">&#x27;html&#x27;</span>).tap(<span class="hljs-function"><span class="hljs-params">args</span> =&gt;</span> &#123;<br>      args[<span class="hljs-number">0</span>].cdn = cdn<br>      <span class="hljs-keyword">return</span> args <span class="hljs-comment">// 需要return</span><br>    &#125;)<br>  &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/09/vue/">
+                        <span class="hidden-mobile">Vue</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
